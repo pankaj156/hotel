@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+   <style>
+    body{
+        background-color: rgb(240, 219, 232);
+    }
+       header{
+        border: 5px solid black;
+        }
+        .labe1{
+            border:1px solid black;
+            background-color: black;
+            color:white;
+            text-align: center;
+            margin-top:5px;
+        }
+        .form_box{
+            border:2px solid black;
+            margin-top:5px;
+            
+        }
+   
+        .margin{
+            margin-top: 5px;
+        }
+        #cName{
+            margin-left: 300px;
+        }
+        #cDate{
+            margin-left:300px;
+        }
+        #nDays{
+            margin-left:294px;
+        }
+        #nPerson{
+            margin-left:285px;
+            margin-bottom:5px;
+        }
+        .roomType{
+            border: 2px solid black;
+            margin-top: 5px;
+            background-color: black;
+            color:white;
+            text-align: center;
+        }
+        .rooms{
+            border:2px solid black;
+            margin-top: 5px;
+        }
+        .room1, .room2{
+           
+     
+            padding:30px;
+        }
+        .room2{
+            margin-left:550px;
+        }
+        .room1{
+            margin-left:200px
+        }
+        #radio2{
+            margin-left: 695px;
+        }
+        #radio1{
+            margin-left: 280px;
+            margin-bottom:15px;
+        }
+        #check2{
+            margin-left: 790px;
+            
+        }
+        #check1{
+            margin-left: 300px;
+            margin-bottom: 15px;
+            
+        }
+        .locker{
+            margin-left: 620px;
+        }
+        .ac{
+            margin-left:230px;
+        }
+        .ameni{
+            border:2px solid black;
+            margin-top:5px;
+        }
+        .advance{
+            background-color: black;
+            color:white;
+            text-align: center;
+            
+        }
+        .amount{
+            border:2px solid black;
+            margin-top:5px; 
+            text-align: center;  
+            font-weight: bold;
+            
+        }
+        #aAmount{
+            
+            margin-bottom: 70px;
+        }
+        .btn1{
+            color:white;
+            background-color: black;
+            margin-top: 15px;
+            margin-left: 650px;
+            margin-bottom: 50px;
+            border-radius: 5px;
+            width: 140px;
+        }
+        
+    </style>
+
+    <script type="text/javascript">
+        function Register(){
+            document.getElementById("lblName").innerHTML=document.getElementById("cName").value;
+            document.getElementById("lblDate").innerHTML=document.getElementById("cDate").value;
+            var tdays=0;
+            var tpeople=0;
+
+            tdays=document.getElementById("nDays").value;
+            document.getElementById("lblDays").innerHTML=tdays;
+            tpeople=document.getElementById("nPerson").value;
+            document.getElementById("lblPer").innerHTML=tpeople;
+
+            tpeople=tpeople-2;
+
+            var roomtype="";
+            var rprice=0;
+
+            var amenities="";
+            var aprice=0;
+
+            var total=0;
+
+            var Advamount=0;
+            var total1=0;
+
+            var radio1=document.getElementById("radio1");
+            var radio2=document.getElementById("radio2");
+            var pic=document.getElementById("pic");
+
+            if(radio1.checked){
+                pic.src="../public/images/1.jpg";
+                roomtype=radio1.value;
+                rprice=200;
+            }
+            if(radio2.checked){
+                pic.src="../public/images/2.jpg";
+                roomtype=radio2.value;
+                rprice=100;
+            }
+
+            var check1=document.getElementById("check1");
+            var check2=document.getElementById("check2");
+
+            if(check1.checked){
+                amenities += check1.value;
+                aprice=10;
+                rprice += aprice;
+            }
+
+            
+            if(check2.checked){
+                amenities += check2.value;
+                aprice=20;
+                rprice += aprice;
+            }
+            total1=rprice;
+            total= total1*tdays;
+            total=total+tpeople*1000;
+            
+            Advamount=document.getElementById("aaAmount").value;
+        
+            total=total-Advamount;
+
+
+         
+
+
+            document.getElementById("lblRoom").innerHTML=roomtype;
+            document.getElementById("lblAme").innerHTML=amenities;
+            document.getElementById("aAmount").innerHTML=Advamount;
+            document.getElementById("lblBala").innerHTML=total;
+
+
+}
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../public/images/hotel-h.jpg" width="100%" height="150">
+    </header>
+
+
+    <section>
+    
+        <div class="labe1">
+            <h4>Customer Info</h4>
+        </div>
+
+        <div class="form_box">
+            <form class="margin">
+               &nbsp; &nbsp; Customer Name<input type="text" id="cName">
+                <br><br>
+                &nbsp; &nbsp; Check in Date &nbsp;&nbsp;&nbsp;<input type="date" id="cDate">
+                <br><br>
+                &nbsp; &nbsp; Total No of Days <input type="number" id="nDays">
+                <br><br>
+                &nbsp;&nbsp; Total No of Person <input type="number" id="nPerson">
+            
+        </div>
+
+        <div class="roomType">
+            <h4>Select Room Type</h4>
+        </div>
+        <div class="rooms">
+            <div>
+                <span class="room1"><img src="../public/images/1.jpg" width="200" height="180">
+                    
+                
+                </span>
+                
+                <span class="room2">
+                    <img src="../public/images/2.jpg" width="200" height="180">
+                </span>
+            </div>
+            <input type="radio" name="choose" value="Delux Room" id="radio1"><b>Delux Room
+            <input type="radio" name="choose" value="Suite Room" id="radio2">Suite Room</b>
+
+
+        </div>
+
+        <div class="roomType">
+            <h4>Select Amenities</h4>
+        </div>
+        <div class="ameni">
+            <div>
+                <span class="ac"><img src="../public/images/ac.png" width="200" height="180">
+                    
+                
+                </span>
+                
+                <span class="locker">
+                    <img src="../public/images/3.jpg" width="200" height="180">
+                </span>
+            </div>
+            <input type="checkbox"  value="AC" id="check1"><b>A/C
+            <input type="checkbox"  value="Locker" id="check2">Locker</b>
+
+
+
+        </div>
+        <div class="advance">
+            <h4>Advance Amount</h4>
+        </div>
+        
+        <div class="amount">
+            <br>
+            Advance Amount <input type="number" id="aaAmount">
+            
+        </div>
+        
+
+       <!-- <div>
+            <button class="btn1" onclick="Register()">Register</button>
+            </div>-->
+
+            
+
+    </form>
+        
+    <div class="row mt-2">
+        <div class="d-flex justify-content-center align-items-center mb-4 mt-4"">
+            <button onclick="Register()" class="btn btn-danger w-30  " data-bs-target="#Summary" data-bs-toggle="modal" id="btn2">Register</button>
+            <div class="modal fade" id="Summary">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2>Your Bill Summary</h2>
+                            <button data-bs-dismiss="modal" class="btn-close"></button>
+                        </div>
+                        <div class="modal-body">
+                               
+                               <div class="col">
+                                <dl class="row">
+                                <dt class="col-5">Customer Name</dt>
+                                <dd class="col-7" id="lblName"></dd>
+                                <dt class="col-5">Date</dt>
+                                <dd class="col-7" id="lblDate"></dd>
+                                <dt class="col-5">Total No of Days</dt>
+                                <dd class="col-7" id="lblDays"></dd>
+                                <dt class="col-5">Total No of Persons</dt>
+                                <dd class="col-7" id="lblPer"></dd>
+                                <dt class="col-5">Room Type</dt>
+                                <dd class="col-7" id="lblRoom"></dd>
+                                <dt class="col-5">Amenities</dt>
+                                <dd class="col-7" id="lblAme"></dd>
+                                <dt class="col-5">Advance Amount</dt>
+                                <dd class="col-7" id="aAmount"></dd>
+                                <dt class="col-5">Balance Amount</dt>
+                                <dd class="col-7" id="lblBala"></dd>
+
+                                </dl>
+                               </div>
+                               <div class="col">
+                                  <img width="100%" height="200" id="pic">
+                               </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    
+    
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
