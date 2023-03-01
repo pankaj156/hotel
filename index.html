@@ -69,18 +69,18 @@
             margin-left:200px
         }
         #radio2{
-            margin-left: 695px;
+            margin-left: 670px;
         }
         #radio1{
-            margin-left: 280px;
+            margin-left: 240px;
             margin-bottom:15px;
         }
         #check2{
-            margin-left: 790px;
+            margin-left: 750px;
             
         }
         #check1{
-            margin-left: 300px;
+            margin-left: 270px;
             margin-bottom: 15px;
             
         }
@@ -108,10 +108,7 @@
             font-weight: bold;
             
         }
-        #aAmount{
-            
-            margin-bottom: 660px;
-        }
+        
         .btn1{
             color:white;
             background-color: black;
@@ -121,12 +118,7 @@
             border-radius: 5px;
             width: 140px;
         }
-        section{
-            
-            
-            
-
-        }
+       
         
     </style>
 
@@ -162,12 +154,12 @@
             if(radio1.checked){
                 pic.src="./public/images/1.jpg";
                 roomtype=radio1.value;
-                rprice=200;
+                rprice=2500;
             }
             if(radio2.checked){
                 pic.src="./public/images/2.jpg";
                 roomtype=radio2.value;
-                rprice=100;
+                rprice=4000;
             }
 
             var check1=document.getElementById("check1");
@@ -175,14 +167,14 @@
 
             if(check1.checked){
                 amenities += check1.value;
-                aprice=10;
+                aprice=1000;
                 rprice += aprice;
             }
 
             
             if(check2.checked){
                 amenities += check2.value;
-                aprice=20;
+                aprice=300;
                 rprice += aprice;
             }
             total1=rprice;
@@ -244,8 +236,8 @@
                     <img src="./public/images/2.jpg" width="200" height="180">
                 </span>
             </div>
-            <input type="radio" name="choose" value="Delux Room" id="radio1"><b>Delux Room
-            <input type="radio" name="choose" value="Suite Room" id="radio2">Suite Room</b>
+            <input type="radio" name="choose" value="Delux Room" id="radio1"><b>Delux Room &#8377 2500
+            <input type="radio" name="choose" value="Suite Room" id="radio2">Suite Room &#8377 4000</b>
 
 
         </div>
@@ -264,8 +256,8 @@
                     <img src="./public/images/3.jpg" width="200" height="180">
                 </span>
             </div>
-            <input type="checkbox"  value="AC" id="check1"><b>A/C
-            <input type="checkbox"  value="Locker" id="check2">Locker</b>
+            <input type="checkbox"  value="AC" id="check1"><b>A/C &#8377 1000
+            <input type="checkbox"  value="Locker" id="check2">Locker &#8377 300</b>
 
 
 
@@ -319,7 +311,6 @@
                                 <dd class="col-7" id="aAmount"></dd>
                                 <dt class="col-5">Balance Amount</dt>
                                 <dd class="col-7" id="lblBala"></dd>
-
                                 </dl>
                                </div>
                                <div class="col">
